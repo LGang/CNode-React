@@ -62,7 +62,6 @@ export default class Index extends React.Component {
             <Category />
             {cells}
           </div>
-
           <div className="sidebar">
             <div className="channel"></div>
             <div className="channel"></div>
@@ -72,7 +71,6 @@ export default class Index extends React.Component {
             <div className="channel"></div>
           </div>
         </div>
-        
       </div>
     )
   }
