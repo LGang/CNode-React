@@ -1,0 +1,167 @@
+.__Index {
+
+  
+  overflow: auto;
+  .main {
+    background-color: #e1e1e1;
+    // width: 90%;
+    // margin: 15px auto;
+    // height: 1200px;
+    
+    display: table;
+    border-spacing: 10px;
+    width: 100%;
+
+    .content {
+      height: 1200px;
+      background-color: white;
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .sidebar {
+      padding: 15px;
+      display: table-cell;
+      background-color: white;
+      width: 290px;
+      height: 900px;
+
+      .channel {
+        margin:10px 0;
+        height: 100px;
+        background-color: orange;
+      }
+    }
+    
+  }
+
+  .menu {
+    padding: 10px;
+    border-spacing: 0;
+    background-color: #f6f6f6;
+
+    a {
+
+      &:hover {
+        color: #005580;
+      }
+
+      &:focus {
+        color: #005580;
+        text-decoration: underline;
+      }
+
+      text-decoration: none;
+      padding: 3px 4px;
+      margin: 0 10px;
+      color: white;
+      border-radius: 3px;
+      background-color: #80bd01;
+      font-size: 14px;
+    }
+
+  }
+
+  .topmenu {
+    @spacing: 25px;
+    background-color: #444;
+    height: 60px;
+
+    img {
+      display: inline-block;
+      width: 120px;
+      height: 34px;
+      margin: 13px 25px;
+    }
+    .LinkGroup {
+      margin: 0 60px 0 0;
+      float: right;
+      a {
+        display: inline-block;
+        color: #ccc;
+        padding: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      height: 120px;
+      .LinkGroup {
+        float: left;
+        margin: 0 5px;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  .header {
+    @h: 50px;
+    // 简单的设置 height、line-height 
+    // 相同就能使单行的·部分·子元素垂直居中
+    // 而且不是百分百的
+    height: @h;
+    background-color: #333;
+
+    // 伪类清除浮动，你也不用知道什么为什么
+    // 清除浮动有多种方法，这只是其中一种
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .icon {
+      // 行内元素无法设置宽高，所以改变一下
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      background-color: lightblue;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+
+    .links {
+      height: @h;
+      line-height: @h;
+      float: right;
+      margin-right: 40px;
+
+      a {
+        margin: 0 5px;
+        display: inline-block;
+        color: #ccc;
+        font-weight: blod;
+        cursor: pointer;
+      }
+    }
+  } // .header
+
+  .body {
+    background-color: #f4f4f4;
+    padding: 20px 15px;
+    display: flex;
+
+    .left {
+      flex: 1;
+      border: 1px solid #000;
+      margin-right: 20px;
+    }
+
+    .right {
+      width: 270px;
+
+      .r-child {
+        height: 150px;
+        margin-bottom: 20px;
+        border: 1px solid #000;
+      }
+    }
+  }
+} // .__Index
