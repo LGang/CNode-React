@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import '../style/Cell.less'
 
 export class Cell extends React.Component {
 
@@ -11,25 +12,27 @@ export class Cell extends React.Component {
                 "job": "招聘",
             }
             if (this.props.top) {
-                return "置顶"
+                return {"className": "tag-highlight", "content": "置顶"}
             }
             if (this.props.good) {
-                return "精华"
+                return {"className": "tag-highlight", "content": "精华"}
             }
-            return category[this.props.tab]
+            return {"className": "tag-default", "content": category[this.props.tab]}
         }
 
         return (
             <div className='cell-group'>
                 <div className="left-party">
-                    <Link to='/'></Link>
-                    <div>
+                    <Link to='/'>
+                        <img src={this.props.author.avatar_url}></img>
+                    </Link>
+                    <div className="text-party">
                         <span className="reply-count">{this.props.reply_count}</span>
                         <span className="count-seprator">/</span>
                         <span className="visit-count">{this.props.visit_count}</span>
                     </div>
-                    <span className={tagName()}></span>
-                    <span className="title">{this.props.title}</span>
+                    <span className={tagName().className}>{tagName().content}</span>
+                    <Link to="/" className="title">{this.props.title}</Link>
                 </div>
                 <div className="right-party">
                     <Link to="profile">
