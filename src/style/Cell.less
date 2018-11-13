@@ -1,0 +1,74 @@
+.cell-group {
+    padding: 10px;
+    position: relative;
+    .left-party {
+        display: flex;
+        align-items: center;
+        .text-party {
+            display: inline-block;
+            width: 70px;
+            text-align: center;
+            font-size: 14px;
+            .reply-count {
+                color: #9e78c0;
+            }
+
+            .count-seprator {
+                font-size: 10px;
+                margin: 0 1px;
+            }
+
+            .visit-count {
+                font-size: 10px;
+                color: #b4b4b4;
+            }
+        }
+
+        .tag-default {
+            color: #999;
+            background-color: #e5e5e5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .tag-highlight {
+            background: #80bd01;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: white;
+            font-size: 12px;
+        }
+        
+        a {
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 3px;
+            }
+
+            &:last-child {
+                text-decoration: none;
+                color: #333;
+                &:hover {
+                    text-decoration: underline;
+                }
+                &:visited {
+                    color: #888;
+                }
+                margin: 0 0 0 5px;
+            }
+        }
+
+    }
+    .right-party {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+        }
+    }
+}
