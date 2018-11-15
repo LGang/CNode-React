@@ -1,3 +1,4 @@
+import queryString from 'query-string'
 
 function timeAgoSinceNow(date) {
     let createDate = new Date(date)
@@ -20,3 +21,9 @@ function timeAgoSinceNow(date) {
 }
 
 export {timeAgoSinceNow}
+
+
+export function getUrlParams(search, key) {
+    const params = queryString.parse(search) || {}
+    return key ? params[key] : params
+}
