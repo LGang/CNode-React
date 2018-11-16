@@ -106,10 +106,7 @@ export default class Index extends React.Component {
       <div className="__Index">
         <Header />
         <div className="main">
-          <div className="content">
-            <Category />
-            {cells}
-          </div>
+          
           <div className="sidebar">
             <div className="channel"></div>
             <div className="channel"></div>
@@ -117,6 +114,10 @@ export default class Index extends React.Component {
             <div className="channel"></div>
             <div className="channel"></div>
             <div className="channel"></div>
+          </div>
+          <div className="content">
+            <Category />
+            {cells}
           </div>
         </div>
       </div>
