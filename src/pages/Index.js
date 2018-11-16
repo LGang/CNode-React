@@ -68,7 +68,7 @@ export default class Index extends React.Component {
   }  
 
   fetchData = (category) => {
-    fetch(`https://cnodejs.org/api/v1/topics?page=1&tab=${category}&limit=50&mdrender=false`)
+    fetch(`https://cnodejs.org/api/v1/topics?page=1&tab=${category}&limit=20&mdrender=false`)
       .then(r=>r.json())
       .then(response =>{
         this.setState({
