@@ -1,0 +1,23 @@
+.page-control {
+    display: inline-block;
+    margin: 10px 0 10px 10px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    a {
+        font-size: 14px;
+        color: #778087;
+        display: inline-block;
+        line-height: 30px;
+        text-align: center;
+        padding: 0 12px;
+        text-decoration: none;
+        &:not(:last-child) {
+            border-right: 1px solid #ddd;
+        }
+    }
+
+    .selected {
+        color: #80bd01;
+    }
+}
