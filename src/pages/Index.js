@@ -3,6 +3,7 @@ import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {Cell} from '../pages/Cell'
 import {getUrlParams} from '../util/util'
+import PageControl from './PageControl';
 
 const Header = () => (
   <div className="topmenu">
@@ -64,11 +65,12 @@ export default class Index extends React.Component {
 
   componentDidMount() {
     const c = getUrlParams(this.props.location.search, 'tab') || 'all'
-    this.fetchData(c)
+    const page = getUrlParams(this.props.location.search, 'page') || '1'
+    this.fetchData(c, page)
   }  
 
-  fetchData = (category) => {
-    fetch(`https://cnodejs.org/api/v1/topics?page=1&tab=${category}&limit=20&mdrender=false`)
+  fetchData = (category, page) => {
+    fetch(`https://cnodejs.org/api/v1/topics?page=${page}&tab=${category}&limit=20&mdrender=false`)
       .then(r=>r.json())
       .then(response =>{
         this.setState({
@@ -89,10 +91,13 @@ export default class Index extends React.Component {
     // 判断 url 参数改变重新拉取数据
     const preC = getUrlParams(preProps.location.search, 'tab')
     const currentC = getUrlParams(this.props.location.search, 'tab')
+
+    const prePage = getUrlParams(preProps.location.search, 'page')
+    const currentPage = getUrlParams(this.props.location.search, 'page')
     // 确保在合适的改变时再重新拉取数据
-    if (preC !== currentC) {
-      this.setState({ topics: [] })
-      this.fetchData(currentC)
+    if (preC !== currentC || prePage !== currentPage) {
+      // this.setState({ topics: [] })
+      this.fetchData(currentC, currentPage)
     }
   }
 
@@ -118,6 +123,7 @@ export default class Index extends React.Component {
           <div className="content">
             <Category />
             {cells}
+            <PageControl />
           </div>
         </div>
       </div>
