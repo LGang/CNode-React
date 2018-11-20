@@ -1,0 +1,38 @@
+.topmenu {
+    @spacing: 25px;
+    background-color: #444;
+    height: 60px;
+
+    img {
+      display: inline-block;
+      width: 120px;
+      height: 34px;
+      margin: 13px 25px;
+    }
+    .LinkGroup {
+      margin: 0 60px 0 0;
+      float: right;
+      a {
+        display: inline-block;
+        color: #ccc;
+        padding: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      height: 120px;
+      .LinkGroup {
+        float: left;
+        margin: 0 5px;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }

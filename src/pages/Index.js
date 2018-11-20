@@ -109,7 +109,7 @@ export default class Index extends React.Component {
       )
     return (
       <div className="__Index">
-        <Header />
+        
         <div className="main">
           
           <div className="sidebar">
