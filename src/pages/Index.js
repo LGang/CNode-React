@@ -26,7 +26,7 @@ const Category = withRouter((props) => {
     {label: '精华', value: 'good'},
     {label: '分享', value: 'share'},
     {label: '问答', value: 'job'},
-    {label: '客户端测试', value: 'test'}
+    {label: '客户端测试', value: 'dev'}
   ]
 
   const currentTab = getUrlParams(props.location.search, 'tab')

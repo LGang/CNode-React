@@ -12,6 +12,9 @@ export class Cell extends React.Component {
                 "ask": "问答",
                 "job": "招聘",
             }
+            if (this.props.tab === "dev") {
+                return {"className": "dev"}
+            }
             if (this.props.top) {
                 return {"className": "tag-highlight", "content": "置顶"}
             }
@@ -32,7 +35,7 @@ export class Cell extends React.Component {
                         <span className="count-seprator">/</span>
                         <span className="visit-count">{this.props.visit_count}</span>
                     </div>
-                    <span className={tagName().className}>{tagName().content}</span>
+                    {tagName().className != "dev" && <span className={tagName().className}>{tagName().content}</span>}
                     <Link to="/" className="title">{this.props.title}</Link>
                 </div>
                 <div className="right-party">
