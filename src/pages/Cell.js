@@ -36,7 +36,7 @@ export class Cell extends React.Component {
                         <span className="visit-count">{this.props.visit_count}</span>
                     </div>
                     {tagName().className != "dev" && <span className={tagName().className}>{tagName().content}</span>}
-                    <Link to="/" className="title">{this.props.title}</Link>
+                    <Link to={`/topic/${this.props.id}`} className="title">{this.props.title}</Link>
                 </div>
                 <div className="right-party">
                     <Link to="profile">

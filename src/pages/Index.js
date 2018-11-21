@@ -109,9 +109,7 @@ export default class Index extends React.Component {
       )
     return (
       <div className="__Index">
-        
         <div className="main">
-          
           <div className="sidebar">
             <div className="channel"></div>
             <div className="channel"></div>

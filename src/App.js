@@ -5,6 +5,7 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import Index from './pages/Index'
 import { Header } from './pages/Header';
 import { Footer } from './pages/Footer';
+import Topic from './pages/Topic';
 
 export default class App extends Component {
   render() {
@@ -13,8 +14,8 @@ export default class App extends Component {
         <div>
           <Header></Header>
           <Switch>
-            {/* 路由配置 */}
             <Route exact path="/" component={Index} />
+            <Route exact path="/topic/:id" component={Topic} />
           </Switch>
           <Footer></Footer>
         </div>
