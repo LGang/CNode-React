@@ -4,19 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import {Cell} from '../pages/Cell'
 import {getUrlParams} from '../util/util'
 import PageControl from './PageControl';
-
-const Header = () => (
-  <div className="topmenu">
-    <img src={require("../Images/cnodejs_light.svg")}></img>
-    <div className="LinkGroup">
-      <a href="#flight">首页</a>
-      <a href="#flight">新手入门</a>
-      <a href="#flight">API</a>
-      <a href="#flight">注册</a>
-      <a href="#flight">登录</a>
-    </div>
-  </div>
-)
+import Side from './Side'
 
 // withRouter
 // 包一下，props.location 等路由信息就可以拿到，否则 props.location 是 undefined
@@ -48,14 +36,6 @@ const Category = withRouter((props) => {
     </div>
   )
 })
-
-const Content = () => {
-  return (
-    <div className="content">
-
-    </div>
-  )
-}
 
 export default class Index extends React.Component {
 
@@ -110,14 +90,8 @@ export default class Index extends React.Component {
     return (
       <div className="__Index">
         <div className="main">
-          <div className="sidebar">
-            <div className="channel"></div>
-            <div className="channel"></div>
-            <div className="channel"></div>
-            <div className="channel"></div>
-            <div className="channel"></div>
-            <div className="channel"></div>
-          </div>
+          {/* <SideBar></SideBar> */}
+          <Side />
           <div className="content">
             <Category />
             {cells}
